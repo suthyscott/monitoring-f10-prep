@@ -10,7 +10,6 @@ let rollbar = new Rollbar({
 
 
 const app = express()
-app.use(rollbar.errorHandler())
 
 let students = []
 
@@ -30,6 +29,8 @@ app.post('/api/student', (req, res)=>{
     res.status(200).send(students)
 })
 
+
+app.use(rollbar.errorHandler())
 
 
 const port = process.env.PORT || 4545
