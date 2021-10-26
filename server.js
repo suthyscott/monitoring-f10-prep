@@ -10,6 +10,7 @@ let rollbar = new Rollbar({
 
 
 const app = express()
+app.use(express.json())
 
 let students = []
 
